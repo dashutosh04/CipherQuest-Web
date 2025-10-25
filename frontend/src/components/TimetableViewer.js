@@ -14,19 +14,19 @@ function TimetableViewer() {
 
   useEffect(() => {
     axios
-      .get("http://cipher-quest-web-back.vercel.app/api/timetables/user1")
+      .get("https://cipher-quest-web-back.vercel.app/api/timetables/user1")
       .then((res) => setTimetables(res.data));
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.post(
-      "http://cipher-quest-web-back.vercel.app/api/timetables",
+      "https://cipher-quest-web-back.vercel.app/api/timetables",
       newPeriod
     );
     setNewPeriod({ userId: "user1", day: "", time: "", course: "", room: "" });
     const res = await axios.get(
-      "http://cipher-quest-web-back.vercel.app/api/timetables/user1"
+      "https://cipher-quest-web-back.vercel.app/api/timetables/user1"
     );
     setTimetables(res.data);
   };

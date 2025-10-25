@@ -18,31 +18,31 @@ function ClubSpace() {
 
   useEffect(() => {
     axios
-      .get("http://cipher-quest-web-back.vercel.app/api/clubs")
+      .get("https://cipher-quest-web-back.vercel.app/api/clubs")
       .then((res) => setClubs(res.data));
   }, []);
 
   const handleClubSubmit = async (e) => {
     e.preventDefault();
     await axios.post(
-      "http://cipher-quest-web-back.vercel.app/api/clubs",
+      "https://cipher-quest-web-back.vercel.app/api/clubs",
       newClub
     );
     setNewClub({ name: "", members: [], tasks: [], files: [] });
     const res = await axios.get(
-      "http://cipher-quest-web-back.vercel.app/api/clubs"
+      "https://cipher-quest-web-back.vercel.app/api/clubs"
     );
     setClubs(res.data);
   };
 
   const handleTaskSubmit = async (clubId) => {
     await axios.post(
-      `http://cipher-quest-web-back.vercel.app/api/clubs/${clubId}/tasks`,
+      `https://cipher-quest-web-back.vercel.app/api/clubs/${clubId}/tasks`,
       newTask
     );
     setNewTask({ title: "", assignee: "", status: "To Do" });
     const res = await axios.get(
-      "http://cipher-quest-web-back.vercel.app/api/clubs"
+      "https://cipher-quest-web-back.vercel.app/api/clubs"
     );
     setClubs(res.data);
   };

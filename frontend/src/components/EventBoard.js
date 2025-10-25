@@ -15,14 +15,14 @@ function EventBoard() {
 
   useEffect(() => {
     axios
-      .get("http://cipher-quest-web-back.vercel.app/api/events")
+      .get("https://cipher-quest-web-back.vercel.app/api/events")
       .then((res) => setEvents(res.data));
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.post(
-      "http://cipher-quest-web-back.vercel.app/api/events",
+      "https://cipher-quest-web-back.vercel.app/api/events",
       newEvent
     );
     setNewEvent({
@@ -34,7 +34,7 @@ function EventBoard() {
       postedBy: "",
     });
     const res = await axios.get(
-      "http://cipher-quest-web-back.vercel.app/api/events"
+      "https://cipher-quest-web-back.vercel.app/api/events"
     );
     setEvents(res.data);
   };

@@ -13,14 +13,14 @@ function ComplaintForm() {
 
   useEffect(() => {
     axios
-      .get("http://cipher-quest-web-back.vercel.app/api/complaints")
+      .get("https://cipher-quest-web-back.vercel.app/api/complaints")
       .then((res) => setComplaints(res.data));
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.post(
-      "http://cipher-quest-web-back.vercel.app/api/complaints",
+      "https://cipher-quest-web-back.vercel.app/api/complaints",
       newComplaint
     );
     setNewComplaint({
@@ -30,18 +30,18 @@ function ComplaintForm() {
       submittedBy: "",
     });
     const res = await axios.get(
-      "http://cipher-quest-web-back.vercel.app/api/complaints"
+      "https://cipher-quest-web-back.vercel.app/api/complaints"
     );
     setComplaints(res.data);
   };
 
   const updateStatus = async (id, status) => {
     await axios.put(
-      `http://cipher-quest-web-back.vercel.app/api/complaints/${id}`,
+      `https://cipher-quest-web-back.vercel.app/api/complaints/${id}`,
       { status }
     );
     const res = await axios.get(
-      "http://cipher-quest-web-back.vercel.app/api/complaints"
+      "https://cipher-quest-web-back.vercel.app/api/complaints"
     );
     setComplaints(res.data);
   };
