@@ -11,21 +11,30 @@ function FeedbackSystem() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/feedback")
+      .get("http://cipher-quest-web-back.vercel.app/api/feedback")
       .then((res) => setFeedbacks(res.data));
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/feedback", newFeedback);
+    await axios.post(
+      "http://cipher-quest-web-back.vercel.app/api/feedback",
+      newFeedback
+    );
     setNewFeedback({ content: "", anonymous: false });
-    const res = await axios.get("http://localhost:5000/api/feedback");
+    const res = await axios.get(
+      "http://cipher-quest-web-back.vercel.app/api/feedback"
+    );
     setFeedbacks(res.data);
   };
 
   const handleUpvote = async (id) => {
-    await axios.put(`http://localhost:5000/api/feedback/${id}/upvote`);
-    const res = await axios.get("http://localhost:5000/api/feedback");
+    await axios.put(
+      `http://cipher-quest-web-back.vercel.app/api/feedback/${id}/upvote`
+    );
+    const res = await axios.get(
+      "http://cipher-quest-web-back.vercel.app/api/feedback"
+    );
     setFeedbacks(res.data);
   };
 
