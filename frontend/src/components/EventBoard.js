@@ -36,9 +36,11 @@ function EventBoard() {
 
   return (
     <div>
-      <h2 className="text-2xl mb-6 text-gray-900">Event & Notice Board</h2>
-      <form onSubmit={handleSubmit} className="card mb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <h2 className="text-3xl mb-8 text-gray-900 animate-fade-in">
+        Event & Notice Board
+      </h2>
+      <form onSubmit={handleSubmit} className="glass-card mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Title
@@ -125,14 +127,14 @@ function EventBoard() {
         </div>
         <button
           type="submit"
-          className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+          className="mt-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-purple-700"
         >
           Post Event
         </button>
       </form>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {events.map((event) => (
-          <div key={event.id} className="card">
+          <div key={event.id} className="glass-card animate-fade-in-up">
             <h3 className="text-lg font-semibold text-blue-600">
               {event.title}
             </h3>

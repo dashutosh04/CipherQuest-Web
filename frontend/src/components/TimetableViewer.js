@@ -28,9 +28,11 @@ function TimetableViewer() {
 
   return (
     <div>
-      <h2 className="text-2xl mb-6 text-gray-900">Timetable Tracker</h2>
-      <form onSubmit={handleSubmit} className="card mb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <h2 className="text-3xl mb-8 text-gray-900 animate-fade-in">
+        Timetable Tracker
+      </h2>
+      <form onSubmit={handleSubmit} className="glass-card mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Day
@@ -90,18 +92,20 @@ function TimetableViewer() {
         </div>
         <button
           type="submit"
-          className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+          className="mt-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-purple-700"
         >
           Add Period
         </button>
       </form>
-      <div className="card">
-        <h3 className="text-lg font-semibold mb-4">Your Timetable</h3>
+      <div className="glass-card">
+        <h3 className="text-xl font-semibold mb-4 text-blue-600">
+          Your Timetable
+        </h3>
         <div className="grid grid-cols-1 gap-4">
           {timetables.map((period) => (
             <div
               key={period.id}
-              className="border border-gray-200 rounded-md p-4 bg-gray-50"
+              className="border border-white border-opacity-30 rounded-md p-4 bg-white bg-opacity-10 backdrop-blur-md"
             >
               <p className="text-sm font-medium text-gray-700">
                 Day: {period.day}

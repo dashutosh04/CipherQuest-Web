@@ -42,11 +42,11 @@ function ClubSpace() {
 
   return (
     <div>
-      <h2 className="text-2xl mb-6 text-gray-900">
+      <h2 className="text-3xl mb-8 text-gray-900 animate-fade-in">
         Club/Project Collaboration
       </h2>
-      <form onSubmit={handleClubSubmit} className="card mb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <form onSubmit={handleClubSubmit} className="glass-card mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Club Name
@@ -76,24 +76,24 @@ function ClubSpace() {
         </div>
         <button
           type="submit"
-          className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+          className="mt-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-purple-700"
         >
           Create Club
         </button>
       </form>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {clubs.map((club) => (
-          <div key={club.id} className="card">
+          <div key={club.id} className="glass-card animate-fade-in-up">
             <h3 className="text-lg font-semibold text-blue-600">{club.name}</h3>
             <p className="text-sm text-gray-600 mt-2">
               Members: {JSON.parse(club.members || "[]").join(", ")}
             </p>
-            <h4 className="text-md font-semibold mt-4">Tasks</h4>
-            <div className="space-y-2 mt-2">
+            <h4 className="text-md font-semibold mt-4 text-blue-600">Tasks</h4>
+            <div className="space-y-3 mt-2">
               {JSON.parse(club.tasks || "[]").map((task, index) => (
                 <div
                   key={index}
-                  className="border border-gray-200 rounded-md p-3 bg-gray-50"
+                  className="border border-white border-opacity-30 rounded-md p-3 bg-white bg-opacity-10 backdrop-blur-md"
                 >
                   <p className="text-sm font-medium text-gray-700">
                     Title: {task.title}
@@ -144,7 +144,7 @@ function ClubSpace() {
               </div>
               <button
                 type="submit"
-                className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+                className="mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:from-blue-700 hover:to-purple-700"
               >
                 Add Task
               </button>
