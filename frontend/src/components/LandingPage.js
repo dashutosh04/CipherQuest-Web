@@ -7,7 +7,7 @@ function LandingPage() {
     <div>
       {/* Hero Section */}
       <div className="hero">
-        <h2 className="animate-fade-in">Welcome to CampusConnect</h2>
+        <h2 className="animate-fade-in">Welcome to UniVerse</h2>
         <p className="animate-fade-in-up delay-100">
           Your all-in-one platform for managing campus life – events,
           complaints, timetables, clubs, and feedback.

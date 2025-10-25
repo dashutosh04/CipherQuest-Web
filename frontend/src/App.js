@@ -14,7 +14,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
         <header className="header">
-          <h1>CampusConnect</h1>
+          <h1>UniVerse</h1>
         </header>
         <nav className="nav">
           <Link to="/">Home</Link>
